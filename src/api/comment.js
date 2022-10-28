@@ -25,7 +25,7 @@ commentRouter.get("/comments/:blogId/:commentId", (req, res)=>{
         return res.status(500).send({msg : "blog does not exists"});
     }
 
-    const comment  = blog[0].comment.filter(c => c.commentId == req.params.commentId);
+    const comment  = blog[0].comments.filter(c => c.commentId == req.params.commentId);
 
     res.status(200).send(comment);
 
